@@ -5,6 +5,10 @@
 @tailwind utilities;
 
 @layer components {
+  .btn {
+    @apply px-4 py-2.5 text-sm flex items-center justify-center text-white rounded-md font-medium bg-gradient-to-tr from-primary to-amber-400 hover:shadow-xl hover:shadow-primary/30px hover:scale-[1.03] focus:ring-4 focus:ring-primary/30 transition-all duration-300;
+  }
+
   .input {
     @apply w-full border-gray-300 rounded-md focus:border-primary sm:text-sm focus:ring-4 focus:ring-primary/30 focus:border-primary/50 p-2.5;
   }
