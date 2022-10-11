@@ -18,6 +18,12 @@ const { errorMessage, value } = useField(
 )
 </script>
 
+<script>
+export default {
+  inheritAttrs: false
+}
+</script>
+
 <template>
   <div class="w-full">
     <label v-if="label" :for="$attrs.id" class="label">{{label}}</label>

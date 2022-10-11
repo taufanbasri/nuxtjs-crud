@@ -9,7 +9,7 @@ export const useAuthorStore = defineStore('author-store', {
     async getAll() {
       try {
         let data = await $fetch<IAuthor[]>('/api/authors')
-        this.author = data
+        this.authors = data
 
         return data as IAuthor[]
       } catch (error) {
@@ -22,13 +22,15 @@ export const useAuthorStore = defineStore('author-store', {
         body: {
           name: name
         }
-      }).catch((error) => {
-        useToast().error(error.data.message)
-      }).then(async () => {
-        await this.getAll()
-
-        useToast().success('Author Created!')
       })
+        .then(async () => {
+          await this.getAll()
+
+          useToast().success('Author Created!')
+        })
+        .catch((error) => {
+          useToast().error(error.data.message)
+        })
     },
     async update(id: string, name: string) {
       await $fetch(`/api/authors/${id}`, {
@@ -47,12 +49,12 @@ export const useAuthorStore = defineStore('author-store', {
     async remove(id: string) {
       await $fetch(`/api/authors/${id}`, {
         method: 'DELETE'
-      }).catch((error) => {
-        useToast().error(error.message)
       }).then(async () => {
         await this.getAll()
 
-        useToast().success('Author updated!')
+        useToast().success('Author Deleted!')
+      }).catch((error) => {
+        useToast().error(error.message)
       })
     }
   }

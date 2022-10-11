@@ -6,7 +6,7 @@
 
 @layer components {
   .btn {
-    @apply px-4 py-2.5 text-sm flex items-center justify-center text-white rounded-md font-medium bg-gradient-to-tr from-primary to-amber-400 hover:shadow-xl hover:shadow-primary/30px hover:scale-[1.03] focus:ring-4 focus:ring-primary/30 transition-all duration-300;
+    @apply px-4 py-2.5 text-sm flex items-center justify-center text-white rounded-md font-medium bg-gradient-to-tr from-primary to-amber-400 hover:shadow-xl hover:shadow-primary/30 hover:scale-[1.03] focus:ring-4 focus:ring-primary/30 transition-all duration-300;
   }
 
   .input {
